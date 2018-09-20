@@ -1,0 +1,28 @@
+swagger: "2.0"
+
+info:
+  title: "Project Api"
+  version: "1.0"
+
+basePath: /v1.0
+
+paths:
+  /items/:
+    get:
+      responses:
+        '200':
+          description: 'Get a list of Items'
+          schema:
+            type: array
+            items:
+              $ref: '#definitions/Item'
+
+definitions:
+  Item:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name: {type: string}
+          
